@@ -16,14 +16,5 @@
 
 ### 4. Deployment: Creating Stack
 ```bash
-$ aws cloudformation create-stack /
---stack-name myapp /
---template-body https://raw.githubusercontent.com/kickscar/aws-practices/master/03/ch06/03/ex02.json /
---parameters /
-ParameterKey=InstanceType,ParameterValue=t2.micro /
-ParameterKey=KeyName,ParameterValue={yourSSHkeyName} /
-ParameterKey=ServicePort,ParameterValue=8080 / 
-ParameterKey=DBName,ParameterValue=myapp / 
-ParameterKey=DBUserName,ParameterValue=myapp /
-ParameterKey=DBUserPassword,ParameterValue={password}
+$ aws cloudformation create-stack --stack-name myapp --template-body https://raw.githubusercontent.com/aws-bitacademy/aws-practices/main/03/ch06/ex02.json --parameters ParameterKey=KeyName,ParameterValue={key} ParameterKey=ServicePort,ParameterValue=8080 ParameterKey=DBName,ParameterValue=myapp ParameterKey=DBUserName,ParameterValue=myapp ParameterKey=DBUserPassword,ParameterValue=myapp12345
 ```
